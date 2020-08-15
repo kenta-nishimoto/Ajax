@@ -1,8 +1,13 @@
 <h1>FirstAPP</h1>
 <%= form_with url:  "/posts", method: :post,id: "form" do |form| %>
-  <%= form.text_field :content %>
+  <%= form.text_field :content  , id: "content"%>
+  <%# ↪︎contentを取得するため %>
   <%= form.submit '投稿する' , id: "submit" %>
 <% end %>
+
+<div id="list">
+</div>
+<%# ↪︎投稿後にメモを追加する要素 %>
 
 <% @posts.each do |post| %>
 <%# この部分がクリックしたときにイベントを発火させたい場所 %>
