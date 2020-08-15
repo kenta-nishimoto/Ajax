@@ -4,10 +4,10 @@
   <%= form.submit '投稿する' , id: "submit" %>
 <% end %>
 
-<h1>Top page</h1>
-<%= link_to '新規投稿', '/posts/new' %>
 <% @posts.each do |post| %>
-  <div class="post">
+<%# この部分がクリックしたときにイベントを発火させたい場所 %>
+<div class="post" data-id=<%= post.id %> data-check=<%= post.checked %>>
+<%# ↪︎メモのidと、既読の有無を管理するcheckを代入している。 %>
     <div class="post-date">
       投稿日時：<%= post.created_at %>
     </div>
